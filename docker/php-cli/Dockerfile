@@ -8,7 +8,8 @@ USER root
 
 RUN apk update && apk add --no-cache \
     nodejs npm openssl nano zip unzip git curl \
-    libpng-dev libxml2-dev postgresql-dev oniguruma-dev
+    libpng-dev libxml2-dev postgresql-dev oniguruma-dev \
+    linux-headers
 
 RUN docker-php-ext-configure pgsql && \
     docker-php-ext-install pdo pdo_pgsql pgsql mbstring exif pcntl bcmath intl sockets soap
