@@ -8,11 +8,14 @@ USER root
 
 RUN apk update && apk add --no-cache \
     nodejs npm openssl nano zip unzip git curl \
-    libpng-dev libxml2-dev postgresql-dev oniguruma-dev \
-    docker-php-ext-configure pgsql && \
-    docker-php-ext-install pdo pdo_pgsql pgsql mbstring exif pcntl bcmath intl sockets soap && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    apk del $PHPIZE_DEPS && \
+    libpng-dev libxml2-dev postgresql-dev oniguruma-dev
+
+RUN docker-php-ext-configure pgsql && \
+    docker-php-ext-install pdo pdo_pgsql pgsql mbstring exif pcntl bcmath intl sockets soap
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN apk del $PHPIZE_DEPS && \
     rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
 
 COPY --chown=www-data:www-data . /var/www/html
