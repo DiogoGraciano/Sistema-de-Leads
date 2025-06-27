@@ -137,12 +137,13 @@ DELETE /api/hotels/{id}  # Deletar hotel
 
 ### Leads
 ```http
-GET    /api/leads        # Listar leads
-POST   /api/leads        # Criar lead
-GET    /api/leads/{id}   # Visualizar lead
-PUT    /api/leads/{id}   # Atualizar lead
-DELETE /api/leads/{id}   # Deletar lead
-GET    /api/leads-export # Exportar leads
+GET    /api/leads             # Listar leads
+POST   /api/leads             # Criar lead
+POST   /api/leads/harmonika   # Criar lead via integração Harmonika*
+GET    /api/leads/{id}        # Visualizar lead
+PUT    /api/leads/{id}        # Atualizar lead
+DELETE /api/leads/{id}        # Deletar lead
+GET    /api/leads-export      # Exportar leads
 ```
 
 ### Relatórios

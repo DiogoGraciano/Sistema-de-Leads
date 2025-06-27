@@ -27,6 +27,42 @@ class LeadController extends Controller
         ]);
     }
 
+    public function createLeadFromHarmonika(Request $request): JsonResponse {
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'telefone' => 'required|string|max:20',
+            'custom1' => 'required|string|max:255',
+            'dataHora' => 'required|date',
+            'custom2' => 'required|string|max:50',
+            'custom3' => 'required|string|in:1 vez ao ano,2 vezes ao ano,3 vezes ou mais ao ano,É a minha primeira vez'
+        ]);
+    
+        $hotel = Hotel::where('name', $request->custom1)->first();
+
+        if (!$hotel) {
+            return response()->json([
+                'message' => 'Hotel não encontrado',
+            ], 404);
+        }
+    
+        $lead = Lead::create([
+            'name' => $request->nome,
+            'email' => $request->email,
+            'phone' => $request->telefone,
+            'hotel_id' => $hotel->id,
+            'date' => $request->dataHora,
+            'nr_room' => $request->custom2,
+            'question' => $request->custom3,
+        ]);
+        $lead->load('hotel');
+    
+        return response()->json([
+            'message' => 'Lead criado com sucesso',
+            'data' => $lead
+        ], 201);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -39,7 +75,7 @@ class LeadController extends Controller
             'hotel_id' => 'required|exists:hotels,id',
             'date' => 'nullable|date',
             'nr_room' => 'nullable|string|max:50',
-            'question' => 'nullable|string',
+            'question' => 'nullable|string|in:1 vez ao ano,2 vezes ao ano,3 vezes ou mais ao ano,É a minha primeira vez',
         ]);
 
         $lead = Lead::create($request->all());

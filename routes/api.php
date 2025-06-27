@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     
     Route::apiResource('hotels', HotelController::class);
+    Route::post('/leads/harmonika', [LeadController::class, 'createLeadFromHarmonika']);
     
     Route::apiResource('leads', LeadController::class);
     Route::get('/leads-export', [LeadController::class, 'export']);
