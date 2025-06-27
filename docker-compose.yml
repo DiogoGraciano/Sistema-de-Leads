@@ -1,0 +1,16 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      - './docker/log/php:/var/log/'
+      - './storage/app/private:/var/www/html/storage/app/private/'
+      - './storage/app/public:/var/www/html/storage/app/public/'
+  php-cli:
+    build:
+      context: .
+      dockerfile: ./docker/php-cli/Dockerfile
+    command: php artisan queue:work --tries=3 --sleep=3 --max-time=3600
+    volumes:
+      - './docker/log/php-cli:/var/log/'
