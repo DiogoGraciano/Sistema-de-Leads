@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Editar Hotel - Ohnmacht')
+@section('title', 'Editar Hotel')
 
 @section('content')
-<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md mx-auto">
         <div class="bg-white overflow-hidden shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -69,7 +69,7 @@
                         <a href="{{ route('hotels.index') }}" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Cancelar
                         </a>
-                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-aviva-orange-600 hover:bg-aviva-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-orange-500">
                             Atualizar Hotel
                         </button>
                     </div>

@@ -1,18 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Hotéis - Ohnmacht')
+@section('title', 'Hotéis')
 
 @section('content')
-    <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <div class="flex items-center justify-between mb-6">
                         <div>
                             <h1 class="text-2xl font-bold text-gray-900">Hotéis</h1>
-                            <p class="mt-1 text-sm text-gray-500">
-                                Gerencie os hotéis do sistema
-                            </p>
                         </div>
                         <div class="flex space-x-3">
                             <a href="{{ route('dashboard') }}"
@@ -20,14 +17,14 @@
                                 Dashboard
                             </a>
                             <a href="{{ route('hotels.create') }}"
-                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-aviva-blue-600 hover:bg-aviva-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                 + Novo Hotel
                             </a>
                         </div>
                     </div>
 
                     @if (session('success'))
-                        <div class="bg-green-50 border border-green-200 rounded-md p-4 mb-6">
+                                                                <div class="bg-aviva-green-50 border border-aviva-green-200 rounded-md p-4 mb-6">
                             <div class="flex">
                                 <div class="flex-shrink-0">
                                     <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
@@ -77,7 +74,7 @@
                             <!-- Botões de ação -->
                             <div class="flex space-x-3">
                                 <button type="submit"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-aviva-blue-600 hover:bg-aviva-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -108,7 +105,7 @@
                             </p>
                         </div>
 
-                        <div class="overflow-hidden shadow ring-1 ring-gray-300 ring-opacity-5 md:rounded-lg">
+                        <div class="overflow-x-auto shadow ring-1 ring-gray-300 ring-opacity-5 md:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead class="bg-gray-50">
                                     <tr>
@@ -147,8 +144,8 @@
                                                         class="text-blue-600 hover:text-blue-900">
                                                         Ver
                                                     </a>
-                                                    <a href="{{ route('hotels.edit', $hotel) }}"
-                                                        class="text-yellow-600 hover:text-yellow-900">
+                                                                                        <a href="{{ route('hotels.edit', $hotel) }}"
+                                        class="text-aviva-orange-600 hover:text-aviva-orange-900">
                                                         Editar
                                                     </a>
                                                     <form method="POST" action="{{ route('hotels.destroy', $hotel) }}"
@@ -179,7 +176,7 @@
                                 <p class="mt-1 text-sm text-gray-500">Comece criando um novo hotel.</p>
                                 <div class="mt-6">
                                     <a href="{{ route('hotels.create') }}"
-                                        class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                        class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-aviva-blue-600 hover:bg-aviva-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                         + Cadastrar primeiro hotel
                                     </a>
                                 </div>

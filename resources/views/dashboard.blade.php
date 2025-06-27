@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard - Ohnmacht')
+@section('title', 'Dashboard')
 
 @section('content')
-<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -28,7 +28,7 @@
                 <div class="mt-8">
                     <h3 class="text-lg font-medium text-gray-900 mb-4">Navegação Rápida</h3>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        <a href="{{ route('hotels.index') }}" class="bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-4 transition-colors duration-200">
+                        <a href="{{ route('hotels.index') }}" class="bg-aviva-blue-50 hover:bg-aviva-blue-100 border border-aviva-blue-200 rounded-lg p-4 transition-colors duration-200">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('leads.index') }}" class="bg-green-50 hover:bg-green-100 border border-green-200 rounded-lg p-4 transition-colors duration-200">
+                        <a href="{{ route('leads.index') }}" class="bg-aviva-green-50 hover:bg-aviva-green-100 border border-aviva-green-200 rounded-lg p-4 transition-colors duration-200">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
                             </div>
                         </a>
 
-                        <a href="{{ route('reports.index') }}" class="bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg p-4 transition-colors duration-200">
+                        <a href="{{ route('reports.index') }}" class="bg-aviva-orange-50 hover:bg-aviva-orange-100 border border-aviva-orange-200 rounded-lg p-4 transition-colors duration-200">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,81 +64,24 @@
                                     </svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-sm font-medium text-gray-900">Relatórios</h4>
+                                    <h4 class="text-sm font-medium text-gray-900">Estatísticas</h4>
                                     <p class="text-sm text-gray-700">Visualizar estatísticas</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                
-                <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="p-5">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="ml-5 w-0 flex-1">
-                                    <dl>
-                                        <dt class="text-sm font-medium text-gray-500 truncate">Usuários</dt>
-                                        <dd class="text-lg font-medium text-gray-900">1</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="p-5">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                                    </svg>
-                                </div>
-                                <div class="ml-5 w-0 flex-1">
-                                    <dl>
-                                        <dt class="text-sm font-medium text-gray-500 truncate">Atividade</dt>
-                                        <dd class="text-lg font-medium text-gray-900">100%</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="p-5">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="ml-5 w-0 flex-1">
-                                    <dl>
-                                        <dt class="text-sm font-medium text-gray-500 truncate">Status</dt>
-                                        <dd class="text-lg font-medium text-gray-900">Online</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="mt-8">
-                    <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="bg-neutral-50 rounded-lg p-6">
                         <h3 class="text-lg font-medium text-gray-900 mb-4">Informações da Conta</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Email</label>
-                                <p class="mt-1 text-sm text-gray-900">{{ Auth::user()->email }}</p>
+                                <label class="block text-sm font-medium text-gray-700">Nome</label>
+                                <p class="mt-1 text-sm text-gray-900">{{ Auth::user()->name }}</p>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Último Login</label>
-                                <p class="mt-1 text-sm text-gray-900">{{ now()->format('d/m/Y H:i') }}</p>
+                                <label class="block text-sm font-medium text-gray-700">Email</label>
+                                <p class="mt-1 text-sm text-gray-900">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
                     </div>

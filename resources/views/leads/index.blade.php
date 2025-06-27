@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Leads - Ohnmacht')
+@section('title', 'Leads')
 
 @section('content')
-<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -22,7 +22,7 @@
                 </div>
 
                 @if (session('success'))
-                    <div class="bg-green-50 border border-green-200 rounded-md p-4 mb-6">
+                                            <div class="bg-aviva-green-50 border border-aviva-green-200 rounded-md p-4 mb-6">
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
@@ -131,7 +131,7 @@
                                 Limpar Filtros
                             </a>
                             <button type="submit"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-aviva-blue-600 hover:bg-aviva-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                 Aplicar Filtros
                             </button>
                         </div>
@@ -152,7 +152,7 @@
                             @if(request()->hasAny(['id', 'name', 'email', 'phone', 'hotel_id', 'date_from', 'date_to', 'nr_room']))
                                 <!-- Exportar apenas filtrados -->
                                 <a href="{{ route('leads.export.csv', request()->query()) }}" 
-                                   class="inline-flex items-center px-3 py-2 border border-green-300 text-sm font-medium rounded-md text-green-700 bg-green-50 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                   class="inline-flex items-center px-3 py-2 border border-aviva-green-300 text-sm font-medium rounded-md text-aviva-green-700 bg-aviva-green-50 hover:bg-aviva-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-green-500">
                                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                     </svg>
@@ -162,7 +162,7 @@
                             
                             <!-- Exportar todos -->
                             <a href="{{ route('leads.export.csv') }}" 
-                               class="inline-flex items-center px-3 py-2 border border-blue-300 text-sm font-medium rounded-md text-blue-700 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                               class="inline-flex items-center px-3 py-2 border border-aviva-blue-300 text-sm font-medium rounded-md text-aviva-blue-700 bg-aviva-blue-50 hover:bg-aviva-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
@@ -267,10 +267,10 @@
                             <h3 class="mt-2 text-sm font-medium text-gray-900">Nenhum lead encontrado</h3>
                             <p class="mt-1 text-sm text-gray-500">Não foram encontrados leads com os filtros aplicados.</p>
                             <div class="mt-4 flex space-x-3 justify-center">
-                                <a href="{{ route('leads.index') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <a href="{{ route('leads.index') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-aviva-blue-600 bg-aviva-blue-100 hover:bg-aviva-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                                     Limpar filtros
                                 </a>
-                                <a href="{{ route('leads.export.csv') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-600 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                <a href="{{ route('leads.export.csv') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-neutral-600 bg-neutral-100 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500">
                                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                     </svg>
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const filtersTitle = document.querySelector('h3');
         if (filtersTitle) {
             const badge = document.createElement('span');
-            badge.className = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 ml-2';
+            badge.className = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-aviva-blue-100 text-aviva-blue-800 ml-2';
             badge.textContent = 'Filtros ativos';
             filtersTitle.appendChild(badge);
         }

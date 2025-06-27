@@ -27,6 +27,6 @@ class LoginController extends Controller
             return redirect()->intended('dashboard');
         }
 
-        return redirect('login')->with('error', 'Credenciais inválidas. Verifique seu email e senha.');
+        return redirect('/')->with('error', 'Credenciais inválidas. Verifique seu email e senha.');
     }
 }

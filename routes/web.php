@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
     Route::post('/logout', function () {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     })->name('logout');
     Route::resource('hotels', HotelController::class);
     Route::resource('leads', LeadController::class);

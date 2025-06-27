@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Cadastrar Hotel - Ohnmacht')
+@section('title', 'Cadastrar Hotel')
 
 @section('content')
-<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md mx-auto">
         <div class="bg-white overflow-hidden shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -68,7 +68,7 @@
                         <a href="{{ route('hotels.index') }}" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Cancelar
                         </a>
-                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-aviva-blue-600 hover:bg-aviva-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aviva-blue-500">
                             Cadastrar Hotel
                         </button>
                     </div>
