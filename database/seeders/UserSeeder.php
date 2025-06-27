@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Administrador',
-            'email' => 'admin@avila.com',
+            'email' => 'admin@aviva.com',
             'password' => Hash::make('soKCKurpVAtUOhrMRsLpNZYGnCuXJRVivricZXDdxoJWSPicdE'),
         ]);
     }
