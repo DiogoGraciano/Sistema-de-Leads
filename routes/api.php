@@ -24,10 +24,23 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
     Route::post('/register', [AuthController::class, 'register']);
     
-    Route::apiResource('hotels', HotelController::class);
+    // Rotas explícitas para hotels
+    Route::get('hotels', [HotelController::class, 'index'])->name('hotels.api.index');
+    Route::post('hotels', [HotelController::class, 'store'])->name('hotels.api.store');
+    Route::get('hotels/{hotel}', [HotelController::class, 'show'])->name('hotels.api.show');
+    Route::put('hotels/{hotel}', [HotelController::class, 'update'])->name('hotels.api.update');
+    Route::patch('hotels/{hotel}', [HotelController::class, 'update']);
+    Route::delete('hotels/{hotel}', [HotelController::class, 'destroy'])->name('hotels.api.destroy');
+
     Route::post('/leads/harmonika', [LeadController::class, 'createLeadFromHarmonika']);
-    
-    Route::apiResource('leads', LeadController::class);
+
+    // Rotas explícitas para leads
+    Route::get('leads', [LeadController::class, 'index'])->name('leads.api.index');
+    Route::post('leads', [LeadController::class, 'store'])->name('leads.api.store');
+    Route::get('leads/{lead}', [LeadController::class, 'show'])->name('leads.api.show');
+    Route::put('leads/{lead}', [LeadController::class, 'update'])->name('leads.api.update');
+    Route::patch('leads/{lead}', [LeadController::class, 'update']);
+    Route::delete('leads/{lead}', [LeadController::class, 'destroy'])->name('leads.api.destroy');
     Route::get('/leads-export', [LeadController::class, 'export']);
     
     Route::get('/reports/summary', [LeadController::class, 'summary']);
