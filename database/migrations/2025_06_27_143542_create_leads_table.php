@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('phone');
             $table->dateTime('date');
             $table->foreignId('hotel_id')->constrained('hotels');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('nr_room');
             $table->enum('question', ['1 vez ao ano', '2 vezes ao ano', '3 vezes ou mais ao ano', 'É a minha primeira vez']);
             $table->timestamps();

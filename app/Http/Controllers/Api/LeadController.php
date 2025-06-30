@@ -30,7 +30,7 @@ class LeadController extends Controller
     public function createLeadFromHarmonika(Request $request): JsonResponse {
         $request->validate([
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'nullable|email|max:255',
             'telefone' => 'required|string|max:20',
             'custom1' => 'required|string|max:255',
             'dataHora' => 'required|date',
@@ -48,7 +48,7 @@ class LeadController extends Controller
     
         $lead = Lead::create([
             'name' => $request->nome,
-            'email' => $request->email,
+            'email' => $request->email ?? null,
             'phone' => $request->telefone,
             'hotel_id' => $hotel->id,
             'date' => $request->dataHora,
@@ -70,7 +70,7 @@ class LeadController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:20',
             'hotel_id' => 'required|exists:hotels,id',
             'date' => 'nullable|date',
