@@ -27,7 +27,7 @@
                 <!-- Navegação Rápida -->
                 <div class="mt-8">
                     <h3 class="text-lg font-medium text-gray-900 mb-4">Navegação Rápida</h3>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         <a href="{{ route('hotels.index') }}" class="bg-aviva-blue-50 hover:bg-aviva-blue-100 border border-aviva-blue-200 rounded-lg p-4 transition-colors duration-200">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
@@ -66,6 +66,20 @@
                                 <div class="ml-4">
                                     <h4 class="text-sm font-medium text-gray-900">Estatísticas</h4>
                                     <p class="text-sm text-gray-700">Visualizar estatísticas</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('users.index') }}" class="bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-lg p-4 transition-colors duration-200">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-purple-900">Gerenciar Usuários</h4>
+                                    <p class="text-sm text-purple-700">Cadastrar e gerenciar usuários</p>
                                 </div>
                             </div>
                         </a>

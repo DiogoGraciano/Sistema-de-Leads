@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -42,5 +43,15 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/leads-export-csv', [LeadController::class, 'exportCsv'])->name('leads.export.csv');
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+
+    // Rotas para Users
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('users', [UserController::class, 'store'])->name('users.store');
+    Route::get('users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::patch('users/{user}', [UserController::class, 'update']);
+    Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
